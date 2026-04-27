@@ -1,0 +1,147 @@
+/* 只需要重写你需要的即可 */
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+
+  'primary': (
+
+    'base': #2B5BA1,
+
+  ),
+
+  'success': (
+
+    'base': #2E7D32,
+
+  ),
+
+  'warning': (
+
+    'base': #E6A23C,
+
+  ),
+
+  'danger': (
+
+    'base': #F56C6C,
+
+  ),
+
+  'info': (
+
+    'base': #909399,
+
+  )
+
+),
+
+);
+
+
+@use "element-plus/theme-chalk/src/index.scss" as *;
+
+.el-card {
+  border: none !important;
+  box-shadow: none !important;
+
+  &:hover {
+    box-shadow: none !important;
+  }
+}
+.el-select{
+  width: 150px !important;
+}
+.el-input-number{
+  width: 150px !important;
+}
+
+// // 如果需要，可以在最后添加额外的 switch 样式覆盖
+ .el-switch__core .el-switch__action{
+  border-radius: 50% !important;
+}
+
+// 添加 radio 样式覆盖
+.el-radio__inner {
+  border-radius: 50% !important;
+  &::after {
+    border-radius: 50% !important;
+  }
+}
+
+// 添加对话框样式覆盖
+.el-dialog {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  
+  .el-dialog__header {
+    margin: 0;
+    padding: 20px 24px;
+    border-bottom: 1px solid #ebeef5;
+    
+    .el-dialog__title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  
+  .el-dialog__body {
+    padding: 24px;
+  }
+  
+  .el-dialog__footer {
+    padding: 16px 24px;
+    border-top: 1px solid #ebeef5;
+  }
+}
+
+// 添加表单样式覆盖
+.el-form {
+  // 表单项样式
+  .el-form-item {
+    margin-bottom: 24px;
+    
+    // 表单标签样式
+    .el-form-item__label {
+      font-weight: 500;
+      color: #333;
+      padding-bottom: 8px;
+    }
+    
+    // 错误提示样式
+    .el-form-item__error {
+      padding-top: 4px;
+    }
+  }
+}
+
+// 输入框样式
+.el-input {
+  .el-input__wrapper {
+    box-shadow: 0 0 0 1px #dcdfe6 inset;
+    transition: all 0.2s;
+    
+    &:hover {
+      box-shadow: 0 0 0 1px #2B5BA1 inset;
+    }
+    
+    &.is-focus {
+      box-shadow: 0 0 0 1px #2B5BA1 inset !important;
+    }
+  }
+  
+  // 禁用状态样式
+  &.is-disabled .el-input__wrapper {
+    background-color: #f5f7fa;
+    box-shadow: 0 0 0 1px #e4e7ed inset;
+  }
+}
+
+// 表单内按钮组样式
+.el-form-item__content {
+  .el-button + .el-button {
+    margin-left: 12px;
+  }
+}
+
+// 必填星号样式
+.el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:before {
+  color: #F56C6C;
+}
